@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Relógio</title>
     <style>
-        body{
-            background: yellow;
+        body {
+            background: rgb(211, 211, 135);
+            color: white;
+            font: normal sans-serif;
+        }
+
+        #page-tittle {
+            text-align: center;
+            padding: 1.5rem;
+            text-transform: capitalize;
+
+        }
+
+        #container {
+            margin: auto;
+            background: white;
+            width: 80dvw;
+            height: 60dvh;
+            border-radius: 15px;
+            box-shadow: 5px 8px 15px rgba(66, 64, 64, 0.671);
+        }
+
+        #lower {
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>hora do dia</h1>
+        <h1 id="page-tittle">hora do dia</h1>
     </header>
     <main id="container">
         <p></p>
         <div id="img-section">
+            <img src="" alt="">
         </div>
     </main>
-    <footer><span>@TituDev</span></footer>
+    <footer id="lower"><span>@tituDev</span></footer>
 </body>
+
 </html>
