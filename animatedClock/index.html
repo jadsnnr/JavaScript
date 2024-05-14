@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relógio</title>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      body {
+        background: rgb(211, 211, 135);
+        color: white;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      #page-tittle {
+        padding: 1.5rem;
+        font-size: 2.5rem;
+      }
+
+      #container {
+        margin: auto;
+        background: white;
+        color: black;
+        width: 60vw;
+        height: 60vh;
+        border-radius: 15px;
+        box-shadow: 5px 8px 15px rgba(66, 64, 64, 0.671);
+      }
+
+      #img{
+        margin-top: 20px;
+        width: 30vw;
+        height: 30vh;
+        border-radius: 50%;
+        box-shadow: 2px 8px 15px;
+        transition: 0.4s;
+      }
+      
+      #img:hover{
+        transform: scale(1.1);
+      }
+
+      #lower {
+        padding: 20px;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body onload="load()">
+    <header>
+      <h1 id="page-tittle">hora do dia</h1>
+    </header>
+    <main id="container">
+        <div id="msg">
+        </div>
+        <div id="img-section">
+          <img id="img" src="img/manha.jpg" alt="" />
+        </div>
+    </main>
+    <footer id="lower"><span>@tituDev</span></footer>
+    
+    <script>
+      //VERIFICAR ESSAS ALTERACOES
+
+      function load() {
+        let msg = document.querySelector("#msg");
+        let img = document.querySelector("#img");
+        let date = new Date();
+        let hora = date.getHours();
+        let min = date.getMinutes();
+        msg.innerHTML = `Agora são ${hora}:${min}`;
+
+        if (hora < 12) {
+          img.src = 'img/manha.jpg'
+        } else if (hora < 16) {
+          img.src = 'img/tarde.jpg'
+        } else {
+          img.src = 'img/noite.jpg'
+        }
+      }
+    </script>
+  </body>
+</html>
