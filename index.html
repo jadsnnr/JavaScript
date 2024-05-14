@@ -61,10 +61,29 @@
     <footer id="lower"><span>@tituDev</span></footer>
 
 <script>
-//VERIFICAR ESSAS ALTERACOES
+      //VERIFICAR ESSAS ALTERACOES
+      let img_swap = document.guerySelector("#img-section");
 
-var time-img = document.guerySelector('div#img-section')
-</script>
+      function load() {
+        let date = new Date();
+        let hora = date.getHours();
+        let min = date.getMinutes();
+
+        if (hours < 12) {
+          img_swap.src = "manha.png";
+
+          
+        } else if (seconds < 16) {
+          img_swap.src = "tarde.png";
+
+        } else {
+          img_swap.src = "noite.png";
+          document.querySelector("#img-section").innerHTML = "";
+        }
+
+        document.querySelector("#img-section").innerHTML = ;
+      }
+    </script>
 </body>
 
 </html>
