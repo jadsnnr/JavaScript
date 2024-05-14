@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        * {
+            font-family: "Roboto", sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(211, 211, 135);
+            color: white;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        #page-tittle {
+            padding: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        #container {
+            margin: auto;
+            background: white;
+            width: 60vw;
+            height: 60vh;
+            border-radius: 15px;
+            box-shadow: 5px 8px 15px rgba(66, 64, 64, 0.671);
+        }
+
+        #lower {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="page-tittle">hora do dia</h1>
+    </header>
+    <main id="container">
+        <p></p>
+        <section>
+         <div id="img-section">
+            <img src="" alt="">
+         </div>
+        </section>
+    </main>
+    <footer id="lower"><span>@tituDev</span></footer>
+
+<script>
+      //VERIFICAR ESSAS ALTERACOES
+      let img_swap = document.guerySelector("#img-section");
+
+      function load() {
+        let date = new Date();
+        let hora = date.getHours();
+        let min = date.getMinutes();
+
+        if (hours < 12) {
+          img_swap.src = "manha.png";
+
+          
+        } else if (seconds < 16) {
+          img_swap.src = "tarde.png";
+
+        } else {
+          img_swap.src = "noite.png";
+          document.querySelector("#img-section").innerHTML = "";
+        }
+
+        document.querySelector("#img-section").innerHTML = ;
+      }
+    </script>
+</body>
+
+</html>
