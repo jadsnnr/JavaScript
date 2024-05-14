@@ -32,6 +32,7 @@
       #container {
         margin: auto;
         background: white;
+        color: black;
         width: 60vw;
         height: 60vh;
         border-radius: 15px;
@@ -52,11 +53,13 @@
     </header>
     <main id="container">
       <section>
-        <div id="msg">
-          <p></p>
+          <div>
+          <p id="msg">
+            $
+          </p>
         </div>
         <div id="img-section">
-          <img id="img" src="" alt="" />
+          <img id="img" src="C:\Users\Amanda\OneDrive\Desktop\img" alt="" />
         </div>
       </section>
     </main>
@@ -66,16 +69,16 @@
       //VERIFICAR ESSAS ALTERACOES
 
       function load() {
-        let msg = document.querySelector("#msg");
-        let img = document.guerySelector("#img");
+        let msg = document.getElementById("msg");
+        let img = document.getElementById("img");
         let date = new Date();
         let hora = date.getHours();
         let min = date.getMinutes();
-        msg.innerHTML = `Agora são ${hora}:${min}.`;
+        msg.innerHTML = `Agora são ${hora}:${min}`;
 
-        if (hours < 12) {
+        if (hora < 12) {
           img.src = "manha.jpg";
-        } else if (seconds < 16) {
+        } else if (hora < 16) {
           img.src = "tarde.jpg";
         } else {
           img.src = "noite.jpg";
