@@ -16,6 +16,12 @@
         box-sizing: border-box;
         padding: 0;
       }
+      :root {
+        --bg-color_mor: rgb(203, 219, 108);
+        --bg-color_aft: rgb(243, 159, 50);
+        --bg-color_nit: rgba(79, 79, 255, 0.856);
+        --txt-main: rgb(87, 85, 85);
+      }
 
       body {
         background: rgb(211, 211, 135);
@@ -32,31 +38,55 @@
       #container {
         margin: auto;
         background: white;
-        color: rgb(41, 39, 39);
-        width: 60vw;
-        height: 60vh;
+        width: 80vw;
+        height: 40vh;
         border-radius: 15px;
         box-shadow: 5px 8px 15px rgba(66, 64, 64, 0.671);
       }
 
-      #msg{
-        padding: 25px;
-        font-size: x-large;
+      #msg {
+        text-transform: uppercase;
+        font-size: 2rem;
         font-weight: bold;
+        color: var(--txt-main);
       }
-
-      #img{
-        margin-top: 20px;
-        width: 15vw;
-        height: 30vh;
+      #img {
+        transition: 0.4s;
+        cursor: pointer;
         border-radius: 50%;
         box-shadow: 2px 8px 15px rgb(81, 80, 80);
-        transition: 0.2s;
-        cursor: pointer;
       }
+
+
+      @media only screen and (max-width: 991px) {
+
+      }
+
       
-      #img:hover{
-        transform: scale(1.1);
+      @media only screen and (max-width: 991px) {
+        #container {
+        margin: auto;
+        width: 80vw;
+        height: 50vh;
+        }
+
+        #img {
+          margin-top: 20px;
+          width: 45vw;
+          height: 40vh;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        #img {
+          margin-top: 20px;
+          width: 50vw;
+          height: 30vh;
+        }
+      }
+
+      #img:hover {
+        transform: scale(1.16);
       }
 
       #lower {
@@ -67,19 +97,18 @@
     </style>
   </head>
 
-  <body onload="load()">
+  <body id="bg_color" onload="load()">
     <header>
       <h1 id="page-tittle">hora do dia</h1>
     </header>
     <main id="container">
-        <div id="msg">
-        </div>
-        <div id="img-section">
-          <img id="img" src="img/manha.jpg" alt="" />
-        </div>
+      <div id="msg"></div>
+      <div id="img-section">
+        <img id="img" src="img/manha.jpg" alt="" />
+      </div>
     </main>
     <footer id="lower"><span>@tituDev</span></footer>
-    
+
     <script>
       //VERIFICAR ESSAS ALTERACOES
 
@@ -92,11 +121,14 @@
         msg.innerHTML = `Agora são ${hora}:${min}`;
 
         if (hora < 12) {
-          img.src = 'img/manha.jpg'
-        } else if (hora < 16) {
-          img.src = 'img/tarde.jpg'
+          img.src = "img/manha.jpg";
+          document.body.style.backgroundColor = "var(--bg-color_mor)";
+        } else if (hora < 18) {
+          img.src = "img/tarde.jpg";
+          document.body.style.backgroundColor = "var(--bg-color_aft)";
         } else {
-          img.src = 'img/noite.jpg'
+          img.src = "img/noite.jpg";
+          document.body.style.backgroundColor = "var(--bg-color_nit)";
         }
       }
     </script>
