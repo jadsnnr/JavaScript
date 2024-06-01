@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identificador</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: rgb(1, 170, 248);
+        font-family: sans-serif;
+        color: white;
+        text-align: center;
+      }
+
+      .main {
+        margin: auto;
+        width: 80vw;
+        color: black;
+        background: white;
+        text-align: start;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.515);
+      }
+      input {
+        cursor: pointer;
+      }
+      #date-value {
+        cursor: text;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Verificador de Idade</h1>
+    </header>
+    <div class="main">
+      <p>
+        Insira o ano do Nascimento:
+        <input type="number" name="yrtxt" id="txtyr" min="1900" />
+      </p>
+      <p>
+        Sexo:
+        <input type="radio" name="sex" id="sexm" />
+        <label for="sexm">Masculino</label>
+        <input type="radio" name="sex" id="sexf" />
+        <label for="sexf">Feminino</label>
+      </p>
+      <input type="button" value="Verificar" onclick="action()" />
+    </div>
+    <div id="res">
+      <p>Os campos acima são <strong>obrigatórios!</strong></p>
+    </div>
+    <footer>
+      <p><strong>@JadsNR</strong></p>
+    </footer>
+
+    <script>
+      function action() {
+        let date = new Date();
+        let ano = date.getFullYear();
+        alert("Está dando certo!");
+        let;
+      }
+    </script>
+  </body>
+</html>
