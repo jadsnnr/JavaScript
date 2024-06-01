@@ -29,6 +29,14 @@
       #date-value {
         cursor: text;
       }
+      #foto {
+        display: block;
+        margin: auto;
+        padding: 15px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
@@ -60,30 +68,43 @@
       function action() {
         let date = new Date();
         let ano = date.getFullYear();
-        let res = document.querySelector('#res')
-        let insyr = document.querySelector('#txtyr')
-        let age = Number(ano) - Number(insyr)
+        let res = document.querySelector("#res");
+        let insyr = document.querySelector("#txtyr");
+        let age = Number(ano) - Number(insyr);
         if (insyr.value.length == 0 || insyr.value > ano) {
           alert("[ERRO] Verifique os dados e tente novamente!");
-        }else{
-          let sex = document.getElementsByName('sex')
-          let age = ano - Number(insyr.value)
-          let img = document.createElement('img')
-          img.setAttribute()
-          let gen = ''
+        } else {
+          let sex = document.getElementsByName("sex");
+          let age = ano - Number(insyr.value);
+          let img = document.createElement("img");
+          img.setAttribute("id", "foto");
+          let gen = "";
           if (sex[0].checked) {
-            gen = 'homem'
-            if (age = >=0 && idade < 10) {
-              
-            }else if (idade < 21) {
-              
+            gen = "homem";
+            if (age >= 0 && age < 10) {
+              img.setAttribute("src", "mas-chi.jpg");
+            } else if (age < 21) {
+              img.setAttribute("src", "mas-jov.jpg");
+            } else if (age < 50) {
+              img.setAttribute("src", "mas-ad.jpg");
+            } else {
+              img.setAttribute("src", "mas-ido.jpg");
             }
           } else if (sex[1].checked) {
-            gen = 'mulher'
-            
+            gen = "mulher";
+            if (age >= 0 && age < 10) {
+              img.setAttribute('src', 'fem-chi.jpg')
+            } else if (age < 21) {
+              img.setAttribute('src', 'fem-jov.jpg')
+            } else if (age < 50) {
+              img.setAttribute('src', 'fem-ad.jpg')
+            } else {
+              img.setAttribute('src', 'fem-ido.jpg')
+            }
           }
-            res.innerHTML = `O usuário é um(a) ${gen} de <strong>${age}</strong> anos de idade!`
-          
+          res.innerHTML = `O usuário é um(a) ${gen} de <strong>${age}</strong> anos de idade!`;
+          res.style.textAlign = 'center'
+          res.appendChild(img);
         }
       }
     </script>
