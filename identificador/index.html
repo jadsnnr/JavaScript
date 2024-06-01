@@ -48,9 +48,9 @@
         <label for="sexf">Feminino</label>
       </p>
       <input type="button" value="Verificar" onclick="action()" />
-    </div>
-    <div id="res">
-      <p>Os campos acima são <strong>obrigatórios!</strong></p>
+      <div id="res">
+        <p>Os campos acima são <strong>obrigatórios!</strong></p>
+      </div>
     </div>
     <footer>
       <p><strong>@JadsNR</strong></p>
@@ -60,8 +60,31 @@
       function action() {
         let date = new Date();
         let ano = date.getFullYear();
-        alert("Está dando certo!");
-        let;
+        let res = document.querySelector('#res')
+        let insyr = document.querySelector('#txtyr')
+        let age = Number(ano) - Number(insyr)
+        if (insyr.value.length == 0 || insyr.value > ano) {
+          alert("[ERRO] Verifique os dados e tente novamente!");
+        }else{
+          let sex = document.getElementsByName('sex')
+          let age = ano - Number(insyr.value)
+          let img = document.createElement('img')
+          img.setAttribute()
+          let gen = ''
+          if (sex[0].checked) {
+            gen = 'homem'
+            if (age = >=0 && idade < 10) {
+              
+            }else if (idade < 21) {
+              
+            }
+          } else if (sex[1].checked) {
+            gen = 'mulher'
+            
+          }
+            res.innerHTML = `O usuário é um(a) ${gen} de <strong>${age}</strong> anos de idade!`
+          
+        }
       }
     </script>
   </body>
