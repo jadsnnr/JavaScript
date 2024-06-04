@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/exe001/relógio/index.html"
+    "livePreview.defaultPreviewPath": "/exe001/relógio/index.html",
+    "liveServer.settings.port": 5501
 }
